@@ -8,8 +8,8 @@ require manual intervention from the server admin to unlock the restrictions.
 Automatically registered spam bots are used to send hundreds or even thousands
 of subscription requests (probably as an attempt to circumvent anti-spam
 filters) and spam messages. This guideline will restrict accounts coming from
-open proxies (as identified by an
-[RBL](https://en.wikipedia.org/wiki/Domain_Name_System-based_Blackhole_List))
+open proxies (as identified by a
+[Real-time Blackhole List (RBL)](https://en.wikipedia.org/wiki/Domain_Name_System-based_Blackhole_List))
 forbidding them to subscribe to other users and to send messages.
 
 ## Required Components
@@ -29,7 +29,23 @@ combination of the following modules is used:
 
 ## Identification of Proxies
 
-We are using the [Spamhaus Exploit and Botnet List XBL](https://www.spamhaus.org/xbl/)
+There are different providers of RBL lists, with different trade-offs
+(false-positive rate, complexity of getting removed, ...). You can choose one
+that is most fitting to your situation and feelings, either from the list
+below or based on other sources.
+
+However, so far we were not able to identify an RBL provider that only blocks
+the proxies used by spammers and not the proxies used by legitimate anonymous
+users. 😉
+
+Our approach to this limitation is to give legitimate users a way to get
+manually unblocked. This is not perfect, but it is a deliberate trade-off
+between becoming a spam relay and providing service to real users.
+
+### Spamhaus XBL
+
+One possibility is to use the
+[Spamhaus Exploit and Botnet List XBL](https://www.spamhaus.org/xbl/)
 to detect registrations from proxies:
 
 > The Spamhaus Exploits Block List (XBL) is a realtime database of IP
@@ -42,13 +58,50 @@ Tor exit nodes. We are aware that blocking Tor has an impact on
 [freedom and anonymity](https://github.com/JabberSPAM/jabber-spam-fighting-manifesto/blob/master/Freedom-and-Anonymity.md),
 as well as that there is significant controversy around Spamhaus.
 
-However, so far we were not able to identify another RBL provider that
-only blocks the proxies used by spammers and not the proxies used by
-legitimate anonymous users.
+Configuration for `prosody.cfg.lua` (see below for details):
 
-Our approach to this problem is to give legitimate users a way to get manually
-unblocked. This is not perfect, but it is a deliberate trade-off between
-becoming a spam relay and providing service to real users.
+```lua
+registration_rbl = "xbl.spamhaus.org";
+registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://www.spamhaus.org/query/ip/$ip";
+```
+
+There is another name under which the XBL is running, and that is
+[Composite Blocking List (CBL)](https://www.abuseat.org/):
+
+> The CBL only lists IPs exhibiting characteristics which are specific to open
+> proxies of various sorts (HTTP, socks, AnalogX, wingate, Bagle call-back
+> proxies etc) and dedicated Spam BOTs (such as Cutwail, Rustock, Lethic,
+> Kelihos, Necurs etc) which have been abused to send spam, worms/viruses that
+> do their own direct mail transmission, or some types of trojan-horse or
+> "stealth" spamware, dictionary mail harvesters etc.
+
+It uses the exact same database as the XBL, but shows better explanations on
+the lookup page.
+
+Configuration for `prosody.cfg.lua` (see below for details):
+
+```lua
+registration_rbl = "cbl.abuseat.org";
+registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://www.abuseat.org/lookup.cgi?ip=$ip";
+```
+
+The XBL/CBL detected 90% of the 740 IPs used by a spammer on a certain server
+on May 1st and 2nd.
+
+### DroneBL
+
+[DroneBL](https://dronebl.org/docs/what) is an RBL often used by IRC
+operators, also aiming at blocking proxy servers.
+
+Configuration for `prosody.cfg.lua` (see below for details):
+
+```lua
+registration_rbl = "dnsbl.dronebl.org";
+registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://dronebl.org/lookup?ip=$ip";
+```
+DroneBL detected 76% of the 740 IPs used by a spammer on a certain server
+on May 1st and 2nd.
+
 
 ## Operating Principle
 
@@ -97,7 +150,7 @@ JUMP_CHAIN=user/pass_acceptable
 
 # process stanzas from marked users
 USER MARKED: dnsbl_hit
-JUMP_CHAIN=user/marked_user_spam
+JUMP_CHAIN=user/marked_user
 
 # you can add further rules to restrict non-marked users as well
 # ...
@@ -110,9 +163,9 @@ JUMP_CHAIN=user/marked_user_spam
 TYPE: error
 PASS.
 
-# accept unsubscribe(d)
+# accept unsubscribe(d) and unavailable (see #1331)
 KIND: presence
-TYPE: unsubscribe|unsubscribed
+TYPE: unsubscribe|unsubscribed|unavailable
 PASS.
 
 # do not filter whitelisted receivers
@@ -125,7 +178,7 @@ PASS.
 
 
 ############ quarantine for MARKed users ############
-::user/marked_user_spam
+::user/marked_user
 
 # reject outgoing subscriptions, allow MUC and normal presence
 KIND: presence
@@ -153,6 +206,9 @@ JUMP_CHAIN=user/bounce_marked
 LOG=spam: marked-user $(stanza)
 BOUNCE=not-allowed (Your account is suspended. Contact support.)
 ```
+
+The last rule will also write each rejected stanza into prosody.log, you can
+grep it for `spam: marked-user`
 
 ### Prosody config file
 
@@ -185,4 +241,17 @@ modules_enabled = {
 
 ## Unblocking Accounts
 
-TODO
+Proper tooling is still TODO.
+
+Manual removal of the firewall mark on an existing user account
+(`victim@example.com`), from `mod_admin_telnet`, while the user is connected:
+
+```
+>bare_sessions["victim@example.com"].firewall_marks = nil
+```
+
+Manual removal if the account is not logged in, from the shell:
+
+```
+rm /var/lib/prosody/example%2ecom/firewall_marks/victim.dat
+```
