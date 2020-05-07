@@ -62,8 +62,10 @@ Configuration for `prosody.cfg.lua` (see below for details):
 
 ```lua
 registration_rbl = "xbl.spamhaus.org";
-registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://www.spamhaus.org/query/ip/$ip";
+registration_rbl_message = "[...] More details: https://www.spamhaus.org/query/ip/$ip";
 ```
+
+### Composite Blocking List (CBL)
 
 There is another name under which the XBL is running, and that is
 [Composite Blocking List (CBL)](https://www.abuseat.org/):
@@ -82,7 +84,7 @@ Configuration for `prosody.cfg.lua` (see below for details):
 
 ```lua
 registration_rbl = "cbl.abuseat.org";
-registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://www.abuseat.org/lookup.cgi?ip=$ip";
+registration_rbl_message = "[...] More details: https://www.abuseat.org/lookup.cgi?ip=$ip";
 ```
 
 The XBL/CBL detected 90% of the 740 IPs used by a spammer on a certain server
@@ -97,7 +99,7 @@ Configuration for `prosody.cfg.lua` (see below for details):
 
 ```lua
 registration_rbl = "dnsbl.dronebl.org";
-registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://dronebl.org/lookup?ip=$ip";
+registration_rbl_message = "[...] More details: https://dronebl.org/lookup?ip=$ip";
 ```
 DroneBL detected 76% of the 740 IPs used by a spammer on a certain server
 on May 1st and 2nd.
@@ -219,13 +221,13 @@ Please replace `support@conference.example.com` with the JID of your support roo
 
 ```lua
 
--- Spamhaus RBL address
-registration_rbl = "xbl.spamhaus.org";
+-- Spamhaus CBL address
+registration_rbl = "cbl.abuseat.org";
 
 -- Automatic message to flagged user account, outlining where to find help
 -- as well as why the IP was blocked. You can use the following variables:
 --   $ip $username $host
-registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://www.spamhaus.org/query/ip/$ip";
+registration_rbl_message = "Your account is restricted because you registered from a malware-infected computer, Tor, or an open proxy. Ask in xmpp:support@conference.example.com?join to get unblocked. More details: https://www.abuseat.org/lookup.cgi?ip=$ip";
 
 -- Enable firewall marks and load the firewall script
 firewall_experimental_user_marks = true;
