@@ -4,9 +4,11 @@
 
 ### Spam blocking
 
+<!--
 * [mod_block_strangers](https://docs.ejabberd.im/admin/configuration/modules/#mod-block-strangers) (official)    
 Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
 UX of getting in touch with people using XMPP.
+-->
 
 * [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (official)   
 Detects presence subscription flood/spam for incoming and outgoing subscriptions.
@@ -44,9 +46,11 @@ Flags account registrations from an open proxy. A WIP documentation can be found
 
 ### Spam blocking
 
+<!--
 * [mod_block_strangers](https://modules.prosody.im/mod_block_strangers.html) (community)    
 Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
 UX of getting in touch with people using XMPP.
+-->
 
 * [mod_blocklist](https://prosody.im/doc/modules/mod_blocklist) (official)        
 Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](https://xmpp.org/extensions/xep-0191.html).
