@@ -4,14 +4,14 @@
 
 ### Spam blocking
 
-* [mod_block_strangers](https://docs.ejabberd.im/admin/configuration/modules/#mod-block-strangers) (internal)    
+* [mod_block_strangers](https://docs.ejabberd.im/admin/configuration/modules/#mod-block-strangers) (official)    
 Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
 UX of getting in touch with people using XMPP.
 
-* [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (internal)   
+* [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (official)   
 Detects presence subscription flood/spam for incoming and outgoing subscriptions.
 
-* [mod_privacy](https://docs.ejabberd.im/admin/configuration/modules/#mod-privacy) (internal)        
+* [mod_privacy](https://docs.ejabberd.im/admin/configuration/modules/#mod-privacy) (official)        
 Allows to add users to a blocklist by implementing [XEP-0016: Privacy Lists](https://xmpp.org/extensions/xep-0016.html).
 
 * [mod_spam_filter](https://github.com/processone/ejabberd-contrib/tree/master/mod_spam_filter) (contrib)    
@@ -20,7 +20,7 @@ JIDs and/or URLs mentioned in spam messages.
 
 ### Spam reporting
 
-* [mod_disco](https://docs.ejabberd.im/admin/configuration/modules/#mod-disco) (internal)    
+* [mod_disco](https://docs.ejabberd.im/admin/configuration/modules/#mod-disco) (official)    
 The option *server_info* provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
 Providing contact addresses is important to give server operators an easy way to get in touch with you
 if they receive spam from your server.
@@ -31,7 +31,7 @@ if they receive spam from your server.
 
 ### Spam blocking
 
-* [blacklistspam plugin](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=blacklistspam) (internal?)    
+* [blacklistspam plugin](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=blacklistspam) (official plugin)    
 The plugin looks up a URL containing addresses of known SPAM distributors and block all messages sent by
 these addresses.
 
@@ -57,7 +57,7 @@ on rule scripts.
 
 ### Spam reporting
 
-* [mod_server_contact_info](https://prosody.im/doc/modules/mod_server_contact_info) (internal)    
+* [mod_server_contact_info](https://prosody.im/doc/modules/mod_server_contact_info) (official)    
 Provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
 Providing contact addresses is important to give server operators an easy way to get in touch with you
 if they receive spam from your server.
