@@ -37,7 +37,7 @@ these addresses.
 
 ### Spam prevention
 
-[mod_register_dnsbl_firewall_mark](https://modules.prosody.im/mod_register_dnsbl_firewall_mark.html) (community)    
+* [mod_register_dnsbl_firewall_mark](https://modules.prosody.im/mod_register_dnsbl_firewall_mark.html) (community)    
 Flags account registrations from an open proxy. A WIP documentation can be found [here](https://github.com/JabberSPAM/resources/blob/master/prosody/restrict-proxy-registrations.md).
 
 ### Spam blocking
@@ -69,11 +69,11 @@ Allows users to report spam by implementing [XEP-0377: Spam Reporting](https://x
 
 ### Spam prevention
 
-[Account Reistration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit)    
+* [Account Reistration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit)    
 Apply a limit on number of account registrations per second.
 
 ### Spam blocking
 
-[Tigase SPAM Filter](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#_tigase_spam_filter)    
+* [Tigase SPAM Filter](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#_tigase_spam_filter)    
 The Tigase SPAM Filter project contains additional features provided for Tigase XMPP Server to reduce number of sent/received SPAM messages.
 
