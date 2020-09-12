@@ -30,9 +30,9 @@ Providing contact addresses is important to give server operators an easy way to
 if they receive spam from your server.
 
 * [mod_spam_reporting](https://modules.prosody.im/mod_spam_reporting.html) (community)    
-Allows users to report Spam by implementing [XEP-0377: Spam Reporting](https://xmpp.org/extensions/xep-0377.html).
+Allows users to report spam by implementing [XEP-0377: Spam Reporting](https://xmpp.org/extensions/xep-0377.html).
     * [mod_watch_spam_reports](https://modules.prosody.im/mod_watch_spam_reports.html) (community)    
-    This module sends a message to the server admins if Spam is reported.
+    This module sends a message to the server admins if spam is reported.
 
 ## Tigase
 
