@@ -18,6 +18,11 @@ Allows to add users to a blocklist by implementing [XEP-0016: Privacy Lists](htt
 Filters spam messages and subscription requests received from remote servers based on lists of known spammer
 JIDs and/or URLs mentioned in spam messages.
 
+### Spam reporting
+
+* [mod_disco](https://docs.ejabberd.im/admin/configuration/modules/#mod-disco) (internal)    
+The option *server_info* provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
+
 ## Metronome
 
 ## Openfire
