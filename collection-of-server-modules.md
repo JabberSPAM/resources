@@ -69,7 +69,7 @@ Allows users to report spam by implementing [XEP-0377: Spam Reporting](https://x
 
 ### Spam prevention
 
-* [Account Reistration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit)    
+* [Account Registration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit)    
 Apply a limit on number of account registrations per second.
 
 ### Spam blocking
