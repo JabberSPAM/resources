@@ -48,7 +48,7 @@ Flags account registrations from an open proxy. A WIP documentation can be found
 Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
 UX of getting in touch with people using XMPP.
 
-* [mod_blocking](https://modules.prosody.im/mod_blocking.html) (community)        
+* [mod_blocklist](https://prosody.im/doc/modules/mod_blocklist) (official)        
 Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](https://xmpp.org/extensions/xep-0191.html).
 
 * [mod_firewall](https://modules.prosody.im/mod_firewall.html) (community)    
