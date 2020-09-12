@@ -22,6 +22,8 @@ JIDs and/or URLs mentioned in spam messages.
 
 * [mod_disco](https://docs.ejabberd.im/admin/configuration/modules/#mod-disco) (internal)    
 The option *server_info* provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
+Providing contact addresses is important to give server operators an easy way to get in touch with you
+if they receive spam from your server.
 
 ## Metronome
 
