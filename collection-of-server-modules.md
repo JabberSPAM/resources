@@ -7,7 +7,8 @@
 <!--
 * [mod_block_strangers](https://docs.ejabberd.im/admin/configuration/modules/#mod-block-strangers) (official)    
 Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
-UX of getting in touch with people using XMPP.
+UX of getting in touch with people using XMPP. Actually many even consider it to do more harm to XMPP than
+it's affect on fighting spam is worth.
 -->
 
 * [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (official)   
@@ -49,7 +50,8 @@ Flags account registrations from an open proxy. A WIP documentation can be found
 <!--
 * [mod_block_strangers](https://modules.prosody.im/mod_block_strangers.html) (community)    
 Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
-UX of getting in touch with people using XMPP.
+UX of getting in touch with people using XMPP. Actually many even consider it to do more harm to XMPP than 
+it's affect on fighting spam is worth.
 -->
 
 * [mod_blocklist](https://prosody.im/doc/modules/mod_blocklist) (official)        
@@ -78,8 +80,23 @@ Allows users to report spam by implementing [XEP-0377: Spam Reporting](https://x
 * [Account Registration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit)    
 Apply a limit on number of account registrations per second.
 
+* [IBR Captcha](https://docs.tigase.net/tigase-server/master-snapshot/Administration_Guide/html/#_captcha_system_now_available_for_in_band_registration) (official)    
+Requires a Captcha for in-band registrations which might help to reduce the registration of spam accounts.
+
 ### Spam blocking
 
 * [Tigase SPAM Filter](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#_tigase_spam_filter)    
 The Tigase SPAM Filter project contains additional features provided for Tigase XMPP Server to reduce number of sent/received SPAM messages.
 
+* [Blocking Command](https://docs.tigase.net/tigase-server/master-snapshot/Administration_Guide/html/#blockingCommand) (official)        
+Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](https://xmpp.org/extensions/xep-0191.html).
+
+* [Domain filter domains](https://docs.tigase.net/tigase-server/master-snapshot/Administration_Guide/html/#_add_new_item_vhost) (official)     
+Allows to restrict or filter traffic from certain servers.
+
+### Spam reporting
+
+* [Abuse Contacts](https://docs.tigase.net/tigase-server/master-snapshot/Administration_Guide/html/#_abuse_contacts) (official)    
+Provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
+Providing contact addresses is important to give server operators an easy way to get in touch with you
+if they receive spam from your server.
