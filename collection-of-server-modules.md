@@ -35,6 +35,22 @@ if they receive spam from your server.
 
 ## Metronome
 
+### Spam prevention and blocking
+
+* [mod_spim_block](https://metronome.im/documentation/configuration) (official)    
+This module contains several spam fighting measures like captchas, spam blocking, serving challenges and
+more.
+
+* [Blocking Command](https://metronome.im/supported-xeps-list) (official)        
+Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](https://xmpp.org/extensions/xep-0191.html).
+
+### Spam reporting
+
+* [Contact Addresses for XMPP Services](https://metronome.im/supported-xeps-list) (official)    
+Provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
+Providing contact addresses is important to give server operators an easy way to get in touch with you
+if they receive spam from your server.
+
 ## Openfire
 
 ### Spam blocking
