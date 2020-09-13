@@ -35,7 +35,17 @@ if they receive spam from your server.
 
 ## Metronome
 
-### Spam prevention and blocking
+### Spam prevention
+
+* [mod_register_api](https://metronome.im/documentation/configuration) (official)    
+Allows to build a challenge and verification system for user registrations and can check for disposable
+email addresses.
+
+* [mod_spim_block](https://metronome.im/documentation/configuration) (official)    
+This module contains several spam fighting measures like captchas, spam blocking, serving challenges and
+more.
+
+### Spam blocking
 
 * [mod_spim_block](https://metronome.im/documentation/configuration) (official)    
 This module contains several spam fighting measures like captchas, spam blocking, serving challenges and
@@ -46,8 +56,8 @@ Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](
 
 ### Spam reporting
 
-* [Contact Addresses for XMPP Services](https://metronome.im/supported-xeps-list) (official)    
-Provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
+* [mod_disco](https://metronome.im/documentation/configuration) (official)    
+The option *contact_info* provides contact addresses by implementing [XEP-0157: Contact Addresses for XMPP Services](https://xmpp.org/extensions/xep-0157.html).
 Providing contact addresses is important to give server operators an easy way to get in touch with you
 if they receive spam from your server.
 
