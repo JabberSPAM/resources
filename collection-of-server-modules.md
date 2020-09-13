@@ -2,6 +2,11 @@
 
 ## Ejabberd
 
+### Spam prevention
+
+* [Captcha](https://docs.ejabberd.im/admin/configuration/basic/#captcha) (official)    
+Requires a Captcha for in-band registrations which might help to reduce the registration of spam accounts.
+
 ### Spam blocking
 
 <!--
@@ -44,6 +49,9 @@ these addresses.
 
 * [mod_register_dnsbl_firewall_mark](https://modules.prosody.im/mod_register_dnsbl_firewall_mark.html) (community)    
 Flags account registrations from an open proxy. A WIP documentation can be found [here](https://github.com/JabberSPAM/resources/blob/master/prosody/restrict-proxy-registrations.md).
+
+* [mod_captcha_registration](https://modules.prosody.im/mod_captcha_registration.html) (community)    
+Requires a Captcha for in-band registrations which might help to reduce the registration of spam accounts.
 
 ### Spam blocking
 
