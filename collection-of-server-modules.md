@@ -31,8 +31,7 @@ Detects presence subscription flood/spam for incoming and outgoing subscriptions
 Allows to add users to a blocklist by implementing [XEP-0016: Privacy Lists](https://xmpp.org/extensions/xep-0016.html).
 
 * [mod_spam_filter](https://github.com/processone/ejabberd-contrib/tree/master/mod_spam_filter) (contrib)    
-Filters spam messages and subscription requests received from remote servers based on lists of known spammer
-JIDs and/or URLs mentioned in spam messages.
+Filters spam messages and subscription requests received from remote servers based on known heuristics.
 
 ### Spam reporting
 
