@@ -19,9 +19,8 @@ Requires a Captcha for in-band registrations which might help to reduce the regi
 
 <!--
 * [mod_block_strangers](https://docs.ejabberd.im/admin/configuration/modules/#mod-block-strangers) (official)    
-Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
-UX of getting in touch with people using XMPP. Actually many even consider it to do more harm to XMPP than
-it's affect on fighting spam is worth.
+Blocks incoming messages from non-contacts. Makes it impossible for people to contact a user without 
+exposing presence. Also makes it impossible to distinguish legitimate subscription requests from spambots.
 -->
 
 * [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (official)   
@@ -90,9 +89,8 @@ Requires a Captcha for in-band registrations which might help to reduce the regi
 
 <!--
 * [mod_block_strangers](https://modules.prosody.im/mod_block_strangers.html) (community)    
-Blocks incoming messages from unknown contacts. Not the recommended way to block spam as it also degrades the 
-UX of getting in touch with people using XMPP. Actually many even consider it to do more harm to XMPP than 
-it's affect on fighting spam is worth.
+Blocks incoming messages from non-contacts. Makes it impossible for people to contact a user without 
+exposing presence. Also makes it impossible to distinguish legitimate subscription requests from spambots.
 -->
 
 * [mod_blocklist](https://prosody.im/doc/modules/mod_blocklist) (official)        
