@@ -112,7 +112,7 @@ Allows users to report spam by implementing [XEP-0377: Spam Reporting](https://x
 
 ### Spam prevention
 
-* [Account Registration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit)    
+* [Account Registration Limits](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#accountRegLimit) (official)    
 Apply a limit on number of account registrations per second.
 
 * [IBR Captcha](https://docs.tigase.net/tigase-server/master-snapshot/Administration_Guide/html/#_captcha_system_now_available_for_in_band_registration) (official)    
@@ -120,7 +120,7 @@ Requires a Captcha for in-band registrations which might help to reduce the regi
 
 ### Spam blocking
 
-* [Tigase SPAM Filter](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#_tigase_spam_filter)    
+* [Tigase SPAM Filter](https://docs.tigase.net/tigase-server/8.0.0/Administration_Guide/html/#_tigase_spam_filter) (official)    
 The Tigase SPAM Filter project contains additional features provided for Tigase XMPP Server to reduce number of sent/received SPAM messages.
 
 * [Blocking Command](https://docs.tigase.net/tigase-server/master-snapshot/Administration_Guide/html/#blockingCommand) (official)        
