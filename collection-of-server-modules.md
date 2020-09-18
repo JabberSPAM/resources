@@ -17,11 +17,9 @@ Requires a Captcha for in-band registrations which might help to reduce the regi
 
 ### Spam blocking
 
-<!--
 * [mod_block_strangers](https://docs.ejabberd.im/admin/configuration/modules/#mod-block-strangers) (official)    
 Blocks incoming messages from non-contacts. Makes it impossible for people to contact a user without 
 exposing presence. Also makes it impossible to distinguish legitimate subscription requests from spambots.
--->
 
 * [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (official)   
 Detects presence subscription flood/spam for incoming and outgoing subscriptions.
@@ -87,11 +85,9 @@ Requires a Captcha for in-band registrations which might help to reduce the regi
 
 ### Spam blocking
 
-<!--
 * [mod_block_strangers](https://modules.prosody.im/mod_block_strangers.html) (community)    
 Blocks incoming messages from non-contacts. Makes it impossible for people to contact a user without 
 exposing presence. Also makes it impossible to distinguish legitimate subscription requests from spambots.
--->
 
 * [mod_blocklist](https://prosody.im/doc/modules/mod_blocklist) (official)        
 Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](https://xmpp.org/extensions/xep-0191.html).
