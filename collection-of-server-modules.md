@@ -73,7 +73,7 @@ if they receive spam from your server.
 ### Spam blocking
 
 * [blacklistspam plugin](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=blacklistspam) (official plugin)    
-The plugin looks up a URL containing addresses of known SPAM distributors and block all messages sent by
+The plugin looks up a URL containing addresses of known SPAM distributors and blocks all messages sent by
 these addresses.
 
 ## Prosody
