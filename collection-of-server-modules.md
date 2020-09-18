@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-[Ejabberd](#ejabberd)    
-[Metronome](#metronome)    
-[Openfire](#openfire)    
-[Prosody](#prosody)    
-[Tigase](#tigase)    
+1. [Ejabberd](#ejabberd)    
+2. [Metronome](#metronome)    
+3. [Openfire](#openfire)    
+4. [Prosody](#prosody)    
+5. [Tigase](#tigase)    
 
 ## Ejabberd
 
