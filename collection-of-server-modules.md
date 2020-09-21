@@ -97,6 +97,9 @@ A powerful tool that enables you to block, bounce, drop, forward, copy, redirect
 on rule scripts. See the [how-to for using the JabberSPAM blocklist](prosody/firewall-blacklist.md) with mod_firewall,
 and also the documentation for developing [custom anti-spam rules](prosody/firewall-custom.md).
 
+* [mod_s2s_blocklist](https://modules.prosody.im/mod_s2s_blacklist) (community)    
+A module to block connections to remote servers at the s2s level.
+
 ### Spam reporting
 
 * [mod_server_contact_info](https://prosody.im/doc/modules/mod_server_contact_info) (official)    
