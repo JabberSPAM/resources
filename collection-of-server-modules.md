@@ -96,6 +96,9 @@ Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](
 A powerful tool that enables you to block, bounce, drop, forward, copy, redirect stanzas and more based
 on rule scripts.
 
+* [mod_s2s_blocklist](https://modules.prosody.im/mod_s2s_blacklist) (community)    
+A module to block connections to remote servers at the s2s level.
+
 ### Spam reporting
 
 * [mod_server_contact_info](https://prosody.im/doc/modules/mod_server_contact_info) (official)    
