@@ -94,7 +94,9 @@ Allows to add users to a blocklist by implementing [XEP-0191: Blocking Command](
 
 * [mod_firewall](https://modules.prosody.im/mod_firewall.html) (community)    
 A powerful tool that enables you to block, bounce, drop, forward, copy, redirect stanzas and more based
-on rule scripts.
+on rule scripts. See [Using the JabberSPAM blocklist with Prosody](https://github.com/JabberSPAM/resources/blob/master/prosody/firewall-blacklist.md)
+and [Creating custom anti-spam rules with mod_firewall](https://github.com/JabberSPAM/resources/blob/master/prosody/firewall-custom.md)
+for more information about how to use mod_firewall.
 
 ### Spam reporting
 
