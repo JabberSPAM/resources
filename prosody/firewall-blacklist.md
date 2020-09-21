@@ -47,10 +47,10 @@ firewall_scripts = {
 
 ### Smart traffic filtering
 
-This ruleset integrates with the existing anti-spam ruleset provided with mod_firewall. That
-ruleset attempts to classify incoming traffic as "spam", "not spam" or "unknown". This ruleset
-will drop anything in the "unknown" category that is from a server identified on the JabberSPAM
-list.
+This ruleset integrates with the existing [anti-spam ruleset](firewall-custom.md) provided
+with mod_firewall. That ruleset attempts to classify incoming traffic as "spam", "not spam"
+or "unknown". This ruleset will drop anything in the "unknown" category that is from a server
+identified on the JabberSPAM list.
 
 The base anti-spam ruleset is a work in progress and still evolving. If you use it, make sure you
 keep your prosody-modules repository updated to take advantage of the latest available rules and
@@ -67,6 +67,9 @@ firewall_scripts = {
     "module:scripts/spam-blocklists.pfw"; -- Add blocklist-based filter
 }
 ```
+
+**Note:** spam-blocklists.pfw will have no effect unless you also load the base ruleset,
+spam-blocking.pfw!
 
 ## Step 3. Reload Prosody
 

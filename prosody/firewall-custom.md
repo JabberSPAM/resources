@@ -1,14 +1,50 @@
 # Creating custom anti-spam rules with mod_firewall
 
-Prosody's mod_firewall comes with a ready-made anti-spam ruleset that you can
-use to tackle incoming spam on your server. The default ruleset is conservative
-about what it blocks. In other words, if there is a chance that a message *may*
-be legitimate, it will allow it by default.
+Prosody's [mod_firewall](https://modules.prosody.im/mod_firewall) comes with a
+ready-made anti-spam ruleset that you can use to tackle incoming spam on your
+server. The default ruleset is conservative about what it blocks. In other words,
+if there is a chance that a message *may* be legitimate, it will allow it by
+default.
 
 The ruleset can be extended in various ways to override its
 default behaviour. This document demonstrates how to do this.
 
-## Overview
+## Configuration
+
+Of course, you need mod_firewall enabled for any of this to work. Just add it to
+modules_enabled:
+
+```
+modules_enabled = {
+   ...
+   "firewall";
+   ...
+}
+```
+
+And to load the base spam-blocking rules that are discussed in this document, add:
+
+```
+firewall_scripts = {
+  "module:scripts/spam-blocking.pfw";
+}
+```
+
+Additional rulesets that you create should be listed here too. For example, if you
+create `/etc/prosody/firewall` and create a script called 'my-custom-rules.pfw' your
+config would look like this:
+
+```
+firewall_scripts = {
+  "module:scripts/spam-blocking.pfw";
+  "/etc/prosody/firewall/my-custom-rules.pfw";
+}
+```
+
+For what should be put into 'my-custom-rules.pfw' or any other file you create, keep
+reading!
+
+## Extending the base ruleset
 
 The base ruleset attempts to categorize incoming stanzas into one of three categories:
 
@@ -25,9 +61,13 @@ more info.
 
 ### Built-in custom chains
 
-The built-in rules expose a number of extension points where you can add additional
-rules to classify traffic or override default behaviour. All these chains end with
-the '_custom' suffix. Chains that do not end with '_custom' should **not** be modified.
+The built-in rules expose a number of extension points where you can add
+additional rules to classify traffic or override default behaviour. All
+these chains end with the '_custom' suffix. The base ruleset also defines
+a number of internal chains that do not end with '_custom' - these should
+**not** be modified by custom rulesets.
+
+For more details about rule chains, check the [mod_firewall documentation](https://modules.prosody.im/mod_firewall#chains).
 
 #### user/spam_check_custom
 
@@ -117,9 +157,9 @@ INSPECT: body#~=advertising
 JUMP CHAIN=user/spam_reject
 ```
 
-See the documentation for the [INSPECT](https://modules.prosody.im/mod_firewall#inspect) condition
-and the documentation of [Lua patterns](https://www.lua.org/manual/5.2/manual.html#6.4.1) for the
-regex-like language used for matching.
+See the documentation for the [INSPECT](https://modules.prosody.im/mod_firewall#inspect)
+condition and the documentation of [Lua patterns](https://www.lua.org/manual/5.2/manual.html#6.4.1)
+for the regex-like language used for matching.
 
 ### Drop spam instead of bouncing
 
@@ -136,4 +176,12 @@ LOG=Discarding suspected spam: $(stanza:top_tag())
 DROP.
 ```
 
+## Conclusion
 
+These are just some examples of what is possible with mod_firewall. As
+you get further into developing your own rulesets, you will want to refer
+to the [mod_firewall documentation](https://modules.prosody.im/mod_firewall).
+
+If you have questions, suggestions or other feedback, or if you want
+to share your rulesets or suggest some additional examples, join the
+[Prosody community](https://prosody.im/discuss)!
