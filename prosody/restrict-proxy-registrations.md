@@ -14,7 +14,7 @@ forbidding them to subscribe to other users and to send messages.
 
 ## Required Components
 
-This requires **prosody 0.10** (**TODO** - does it really work on 0.10?) or later, and
+This requires **prosody 0.11** or later, and
 **[prosody-modules](https://modules.prosody.im/) from 2020-05-06** or later. A
 combination of the following modules is used:
 
