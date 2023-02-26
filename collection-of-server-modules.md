@@ -73,6 +73,9 @@ if they receive spam from your server.
 The plugin looks up a URL containing addresses of known SPAM distributors and blocks all messages sent by
 these addresses.
 
+* [MUC Real-Time Block List plugin](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=mucrtbl)    
+A plugin that subscribes to a real-time block list for MUC rooms, using pub/sub.
+
 ## Prosody
 
 ### Spam prevention
