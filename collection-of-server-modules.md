@@ -21,6 +21,9 @@ Requires a Captcha for in-band registrations which might help to reduce the regi
 Blocks incoming messages from non-contacts. Makes it impossible for people to contact a user without 
 exposing presence. Also makes it impossible to distinguish legitimate subscription requests from spambots.
 
+* [mod_muc_rtbl](https://docs.ejabberd.im/admin/configuration/modules/#mod-muc-rtbl) (official)     
+Module for real-time blocklists for MUC rooms.
+
 * [mod_pres_counter](https://docs.ejabberd.im/admin/configuration/modules/#mod-pres-counter) (official)   
 Detects presence subscription flood/spam for incoming and outgoing subscriptions.
 
